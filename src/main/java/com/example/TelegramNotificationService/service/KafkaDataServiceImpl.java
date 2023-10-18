@@ -36,7 +36,6 @@ public class KafkaDataServiceImpl implements KafkaDataService {
 
         List<Subscription> list = subscriptionService.findByCompanyTag(company);
         log.info(tag);
-        log.info(subscriptionRepository.findAll().toString());
         for (Subscription id:list) {
             System.out.println("ID:" + id.toString());
         }

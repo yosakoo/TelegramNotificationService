@@ -2,8 +2,6 @@ package com.example.TelegramNotificationService.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
 @Data
@@ -14,10 +12,10 @@ public class Subscription {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "user_telegram_chat_id")
-    private User userTelegramChatId;
+    @JoinColumn(name = "telegram_chat_id")
+    private Users user_telegram_chat_id;
 
     @ManyToOne
-    @JoinColumn(name = "company_tag")
-    private Company companyTag;
+    @JoinColumn(name = "company_id")
+    private Company companyId;
 }

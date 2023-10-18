@@ -3,12 +3,10 @@ package com.example.TelegramNotificationService.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.List;
-
 @Entity
 @Data
 @Table(name = "users")
-public class User {
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,6 +17,6 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Column(name = "telegram_chat_id", unique = true)
-    private Long telegramChatId;
+    @Column(name = "user_telegram_chat_id", unique = true)
+    private Long telegram_chat_id;
 }

@@ -8,6 +8,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+      show-sql: true
   kafka:
     bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
   liquibase:
@@ -24,3 +25,7 @@ bot:
 
 
 topics: ${KAFKA_SUBSCRIBED_TOPICS}
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG

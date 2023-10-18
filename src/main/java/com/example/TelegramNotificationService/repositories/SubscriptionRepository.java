@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface SubscriptionRepository extends JpaRepository<Subscription, String> {
+public interface SubscriptionRepository extends JpaRepository<Subscription, Long> {
 
-    List<Subscription> findByCompanyTag(Company companyTag);
+    List<Subscription> findByCompanyId(Company companyId);
 }

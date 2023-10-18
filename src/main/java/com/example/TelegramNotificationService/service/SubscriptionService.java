@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.ConcurrentMap;
 
 @Service
 @RequiredArgsConstructor
@@ -18,6 +19,6 @@ public class SubscriptionService {
 
 
     public List<Subscription> findByCompanyTag(Company tag){
-        return subscriptionRepository.findByCompanyTag(tag);
+        return subscriptionRepository.findByCompanyId(tag);
     }
 }

@@ -3,7 +3,7 @@ create table users
     id serial primary key,
     username text not null,
     password text not null,
-    telegramChatId bigint unique
+    telegram_сhat_id bigint unique
 );
 
 -- company table
@@ -17,15 +17,15 @@ create table company
 -- subscription table
 create table subscription
 (
-    id serial primary key,
-    user_telegramchatid bigint references users(telegramChatId),
-    company_tag text not null ,
-    unique (user_telegramchatid, company_tag)
+    id serial PRIMARY KEY,
+    user_telegram_chat_id bigint REFERENCES users(telegram_сhat_id),
+    company_tag text REFERENCES company(company_tag),
+    UNIQUE (user_telegram_chat_id, company_tag)
 );
 
 create table news
 (
     id bigserial primary key,
-    company_tag text not null,
+    companyTag text not null,
     content text not null
 );

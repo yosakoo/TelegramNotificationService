@@ -14,10 +14,10 @@ public class Subscription {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "user_telegramchatid")
-    private User user;
+    @JoinColumn(name = "user_telegram_chat_id")
+    private User userTelegramChatId;
 
-
+    @ManyToOne
     @JoinColumn(name = "company_tag")
-    private String companyTag;
+    private Company companyTag;
 }

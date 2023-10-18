@@ -6,16 +6,13 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "company")
-@NamedQuery(name = "Company.findByCompanyTag", query = "SELECT c FROM Company c WHERE c.company_tag = :companyTag")
-
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "company_tag" , nullable = false, unique = true)
+    private String companyTag;
 
-    @Column(nullable = false, unique = true)
-    private String company_tag;
-
-    @Column(nullable = false)
-    private String company_name;
+    @Column(name = "company_name",nullable = false)
+    private String companyName;
 }

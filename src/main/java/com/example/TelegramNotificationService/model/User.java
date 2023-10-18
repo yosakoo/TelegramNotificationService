@@ -19,6 +19,6 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Column(name = "telegramchatid", unique = true)
+    @Column(name = "telegram_chat_id", unique = true)
     private Long telegramChatId;
 }

@@ -6,17 +6,17 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "users")
-public class Users {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(name = "username", nullable = false)
     private String username;
 
-    @Column(nullable = false)
+    @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name = "user_telegram_chat_id", unique = true)
+    @Column(name = "telegram_chat_id", unique = true)
     private Long telegram_chat_id;
 }

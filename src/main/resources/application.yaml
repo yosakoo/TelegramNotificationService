@@ -21,7 +21,6 @@ server:
 bot:
   token: ${BOT_TOKEN}
   name: ${BOT_NAME}
-  site-url: http://localhost:8082/
 
 
 topics: ${KAFKA_SUBSCRIBED_TOPICS}

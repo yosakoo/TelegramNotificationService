@@ -15,12 +15,9 @@ public class TelegramBot extends TelegramLongPollingBot {
     @Value("${bot.name}")
     private String name;
 
-    @Value("${bot.site-url}")
-    private String siteUrl;
 
     @Value("${bot.token}")
-    private String token;
-
+    private final String token;
 
 
     public TelegramBot(@Value("${bot.token}") String botToken) {
@@ -34,8 +31,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         long chatId = update.getMessage().getChatId();
         String messageText = "Ваш chat id = `"
                 + chatId
-                + "`\nДля получения уведомлений введите его в форму на странице профиля на сайте " +
-                siteUrl;
+                + "`\nДля получения уведомлений введите его в форму на странице профиля на сайте.";
 
         SendMessage message = new SendMessage();
         message.enableMarkdown(true);
@@ -69,6 +65,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     public String getBotUsername() {
         return name;
     }
+
     @Override
     public String getBotToken() {
         return token;

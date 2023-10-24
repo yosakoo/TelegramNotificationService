@@ -13,7 +13,7 @@ public class News {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "companyTag", nullable = false)
+    @Column(name = "company_tag", nullable = false)
     private String company_tag;
 
     @Column(name = "content", nullable = false)

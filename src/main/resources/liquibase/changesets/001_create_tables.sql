@@ -24,6 +24,6 @@ create table subscriptions
 create table news
 (
     id bigserial primary key,
-    companyTag text not null,
+    company_tag text not null,
     content text not null
 );
